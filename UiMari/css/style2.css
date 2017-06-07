@@ -1,0 +1,188 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
+.pricing-table {
+    position: relative;
+    display: block;
+    margin: 0 5px;
+    float: left;
+    width: 370px;
+    background: #ffffff;
+    font-family: Roboto, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+/* สี บนกับ ล่าง*/
+
+.basic {
+    border-top: 5px solid #CC3300;
+    border-bottom: 3px solid #CC3300;
+}
+
+.standard {
+    border-top: 3px solid #5f5fa7;
+    border-bottom: 3px solid #5f5fa7;
+}
+
+.premium {
+    border-top: 3px solid #FF9900;
+    border-bottom: 3px solid #FF9900;
+}
+
+
+/* สี บนกับ ล่าง*/
+
+.pricing-table span {
+    display: block;
+}
+
+
+/* พื้นหลัง ขนาด สี ตรงชื่อโปรโมชั่น */
+
+.table-head {
+    padding: 18px 0;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+/*สีตัวหนังสือ*/
+
+.basic .table-head {
+    color: #FF4500;
+}
+
+.standard .table-head {
+    color: #5f5fa7;
+}
+
+.premium .table-head {
+    color: #FF9900;
+}
+
+
+/*สีตัวหนังสือ*/
+
+
+/* พื้นหลังราคาหลัก */
+
+.price {
+    padding: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+/* พื้นหลังสีราคา */
+
+.basic .price {
+    background: #FF4500;
+}
+
+.standard .price {
+    background: #5f5fa7;
+}
+
+.premium .price {
+    background: #FF9900;
+}
+
+
+/*ตัวหนังสือย่อย (รายละเอียด)*/
+
+.table-row {
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #2F4F4F;
+}
+
+
+/*พื้นหลัง สลับสีรายละเอียด (รายละเอียด).*/
+
+.table-row:nth-child(2n) {
+    background: #f7f7f7;
+}
+
+
+/* พื้นที่ปุ่มด้านล่าง */
+
+.purchase {
+    padding: 35px 0;
+}
+
+a.buy {
+    position: relative;
+    display: inline-block;
+    z-index: 5;
+    padding: 7px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-transition: color .2s ease, background .5s ease;
+    -o-transition: color .2s ease, background .5s ease;
+    transition: color .2s ease, background .5s ease;
+    overflow: hidden;
+}
+
+.basic a.buy {
+    border: 2px solid #CC3300;
+    color: #FF4500;
+}
+
+.standard a.buy {
+    border: 2px solid #5f5fa7;
+    color: #5f5fa7;
+}
+
+.premium a.buy {
+    border: 2px solid #FF9900;
+    color: #FF9900;
+}
+
+a.buy:hover {
+    color: #ffffff;
+}
+
+.basic a.buy:hover {
+    background: #FF4500;
+}
+
+.standard a.buy:hover {
+    background: #5f5fa7;
+}
+
+.premium a.buy:hover {
+    background: #FF9900;
+}
+
+a.buy:after {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 0;
+    content: '';
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.basic a.buy:after {
+    background: #FF4500;
+}
+
+.standard a.buy:after {
+    background: #5f5fa7;
+}
+
+.premium a.buy:after {
+    background: #FF9900;
+}
+
+a.buy:hover:after {
+    height: 100%;
+}

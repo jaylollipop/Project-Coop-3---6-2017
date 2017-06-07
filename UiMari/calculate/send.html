@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Calculator</title>
+    <script type="text/javascript" src="Jquery/jquery-3.1.1.min.js"></script>
+
+    <script>
+        $(function() {
+            $("#text1").css("color", "Khaki")
+                .css("text-align", "center")
+                .css("font-family", "JasmineUPC")
+                .css("font-size", "45px")
+
+        });
+    </script>
+    <link href="button.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body bgcolor="">
+
+
+    <!-----------------------------------    แสดงค่าผลรวมทั้งหมดดด        ------------------------------>
+    <!-----------------------------------  ------------------------------     ------------------------------>
+    <center>
+        <table bgcolor="#3366CC">
+
+            <tr>
+                <td align="center">
+
+                    <b><p id="text1">จำนวนการใช้งาน 1 เดือน <br><span id="result"></span></p></b>
+
+                </td>
+            </tr>
+
+        </table>
+    </center>
+
+    <script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+
+        var result = getUrlVars()["result1"];
+        var result = parseFloat(result);
+        if (result >= 1024) {
+            var result1 = result / 1024;
+            var n = result1.toFixed(2);
+            $('#result').html(n + ' TB');
+        } else if (result < 1) {
+            var result1 = result * 1024;
+            var n = result1.toFixed(2);
+            $('#result').html(n + ' MB');
+        } else {
+            var n = result.toFixed(2);
+            $('#result').html(n + ' GB');
+        }
+
+        function goToPage() {
+            if (result >= 1024) {
+                location.href = '../detail_rd1-6.html';
+            } else if (result < 1) {
+                location.href = '../detail_rd1-1.html';
+            } else {
+                if (n > 1 && n <= 1.5) {
+                    location.href = '../detail_rd1-1.html';
+                } else if (n >= 1.5001 && n <= 5) {
+                    location.href = '../detail_rd1-2.html';
+                } else if (n >= 5.0001 && n <= 10) {
+                    location.href = '../detail_rd1-3.html';
+                } else if (n >= 10.0001 && n <= 14) {
+                    location.href = '../detail_rd1-4.html';
+                } else if (n >= 14.0001 && n <= 20) {
+                    location.href = '../detail_rd1-5.html';
+                } else {
+                    location.href = '../detail_rd1-6.html';
+
+                }
+            }
+
+        }
+    </script>
+
+    <!-----------------------------------  ------------------------------     ------------------------------>
+    <!-----------------------------------  ------------------------------     ------------------------------>
+
+    <center>
+        <br><br>
+        <div id="chartContainer" style="height: 450px; width: 90%;"></div>
+    </center>
+
+    <!-----------------------------------   เช็คค่า        --------------------------------------------------->
+    <!-----------------------------------  ------------------------------     ------------------------------>
+    <!----------   <script language="javascript">
+        var queryString = decodeURIComponent(window.location.search);
+        queryString = queryString.substring(1);
+        var queries = queryString.split("&");
+        var tmpstring;
+
+        for (var i = 0; i < queries.length; i++) {
+            tmpstring = queries[i].split("=");
+            switch (tmpstring[0]) {
+                case 'total1':
+                    alert('total : ' + tmpstring[1]);
+
+                    break;
+                case 'total2':
+                    alert('total2 : ' + tmpstring[1]);
+                    break;
+                case 'total3':
+                    alert('total3 : ' + tmpstring[1]);
+                    break;
+                case 'total4':
+                    alert('total4 : ' + tmpstring[1]);
+                    break;
+                case 'total5':
+                    alert('total5 : ' + tmpstring[1]);
+                    break;
+                case 'total6':
+                    alert('total6 : ' + tmpstring[1]);
+                    break;
+            }
+
+        }
+    </script> ------->
+    <!-----------------------------------  ------------------------------     ------------------------------>
+    <!-----------------------------------  ------------------------------     ------------------------------>
+
+
+
+    <!-----------------------------------    แผนกราฟวงกลม   --------------------------------------------------->
+    <!-----------------------------------  ------------------------------     ------------------------------>
+
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+
+    <script type="text/javascript">
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        var sum;
+        var total1 = getUrlVars()["total1"];
+        var total2 = getUrlVars()["total2"];
+        var total3 = getUrlVars()["total3"];
+        var total4 = getUrlVars()["total4"];
+        var total5 = getUrlVars()["total5"];
+        var total6 = getUrlVars()["total6"];
+
+        var sumtotal1 = total1 * 100 / result;
+        var sumtotal2 = total2 * 100 / result;
+        var sumtotal3 = total3 * 100 / result;
+        var sumtotal4 = total4 * 100 / result;
+        var sumtotal5 = total5 * 100 / result;
+        var sumtotal6 = total6 * 100 / result;
+
+        var sumtotal1 = sumtotal1.toFixed(2);
+        var sumtotal2 = sumtotal2.toFixed(2);
+        var sumtotal3 = sumtotal3.toFixed(2);
+        var sumtotal4 = sumtotal4.toFixed(2);
+        var sumtotal5 = sumtotal5.toFixed(2);
+        var sumtotal6 = sumtotal6.toFixed(2);
+
+        window.onload = function() {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                title: {
+                    text: "เฉลี่ยกิจกรรมการใช้งาน 3G/4G ทั้งหมดใน 1 เดือน"
+                },
+                animationEnabled: true,
+                legend: {
+                    verticalAlign: "center",
+                    horizontalAlign: "left",
+                    fontSize: 20,
+                    fontFamily: "Helvetica"
+                },
+                theme: "theme2",
+                data: [{
+                    type: "pie",
+                    indexLabelFontFamily: "Garamond",
+                    indexLabelFontSize: 20,
+                    indexLabel: "{label} {y}%",
+                    startAngle: -20,
+                    showInLegend: true,
+                    toolTipContent: "{legendText} {y}%",
+                    dataPoints: [{
+                        y: sumtotal1,
+                        legendText: "ดูหนังออนไลน์",
+                        label: "ดูหนังออนไลน์"
+                    }, {
+                        y: sumtotal2,
+                        legendText: "ดาวน์โหลด แอพ,เพลง,เกมส์",
+                        label: "ดาวน์โหลด แอพ,เพลง,เกมส์"
+                    }, {
+                        y: sumtotal3,
+                        legendText: "โพสต์รูปบนโซเชียล",
+                        label: "โพสต์รูปบนโซเชียล"
+                    }, {
+                        y: sumtotal4,
+                        legendText: "เข้าเว็บไซต์",
+                        label: "เข้าเว็บไซต์"
+                    }, {
+                        y: sumtotal5,
+                        legendText: "เล่นเกมส์ออนไลน์",
+                        label: "เล่นเกมส์ออนไลน์"
+                    }, {
+                        y: sumtotal6,
+                        legendText: "รับส่ง E-Maill",
+                        label: "รับส่ง E-Maill"
+                    }]
+                }]
+            });
+            chart.render();
+        }
+    </script>
+
+    <!-----------------------------------  ------------------------------     ------------------------------>
+    <!-----------------------------------  ------------------------------     ------------------------------>
+    <br><br>
+    <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="Promotion1.html"><button class="button6">HOME</button></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+        <button class="button5" onclick="goToPage(); return false;">เลือกโปรโมชั่นการใช้งาน</button>
+
+    </div>
+
+</body>
+
+</html>

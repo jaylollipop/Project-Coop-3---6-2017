@@ -1,0 +1,471 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Promotion</title>
+    <script type="text/javascript" src="Jquery/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function() {
+            $("#text1").css("color", "red")
+                .css("text-align", "center")
+                .css("font-family", "JasmineUPC")
+                .css("font-size", "45px")
+
+            $("#text2").css("color", "#778899")
+                .css("text-align", "center")
+                .css("font-family", "JasmineUPC")
+                .css("font-size", "41px")
+
+            $(".text3")
+                //.css("text-align","center")
+                .css("font-family", "JasmineUPC")
+                .css("font-size", "38px")
+
+            $(".text4") //.css("color","#778899")
+                .css("text-align", "center")
+                .css("font-family", "JasmineUPC")
+                .css("font-size", "45px")
+
+            $(".textoutput").css("font-size", "45px")
+                .css("font-family", "Tahoma")
+
+            $("#textall").css("font-size", "45px")
+                .css("font-family", "Tahoma")
+
+            $("#all").css("font-size", "45px")
+                .css("font-family", "Tahoma")
+
+        });
+    </script>
+
+    <style type="text/css">
+        body {
+            font-size: 20px;
+            font-family: JasmineUPC;
+        }
+        
+        .style1 {
+            font-size: 100%;
+            color: red;
+            background-color: gold;
+            border: 2px dotted black;
+        }
+    </style>
+    <link href="input_rang.css" type="text/css" rel="stylesheet">
+    <link href="button.css" type="text/css" rel="stylesheet">
+    <link href="option.css" type="text/css" rel="stylesheet">
+    <link href="input_text.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+    <center>
+        <b><p id = "text1">คำนวนปริมาณการใช้งาน Internet</b><img src="true.png" width="420px" height="100px" alt=""><br>
+        <div id="text2">เพียงใส่จำนวนตัวเลข ในกิจกรรมที่เราทำในแต่ละวัน</div>
+        </p>
+        <br><br><br>
+        <!---------------------------------------------------- table 1 ------------------------------------>
+        <!---------------------------------------------------- option 1 ------------------------------------>
+
+        <div id="table1">
+            <table border="0" width="100%" align="center">
+                <tr>
+                    <td align="center">
+                        <u><h3 id = "text3" class="text3">ดูหนังออนไลน์</h3></u><br>
+
+                        <img width="250px" height="250px" src="logo\play-3.png"></img>
+
+                    </td>
+                    <td align="center" id="textss">
+                        <p id="text4" class="text4">กรุณาใส่ค่าประมาณการใช้งาน</p><br>
+                        <span>
+ <form oninput="y.value=parseInt(a.value)">
+  <div id = "on1"><input type="range" id="a1" name="a" value="0" min="0" max="24" data-degree-range="360" data-degree-offset="10" step="1" ><br>
+  <h1><output name="y" for="b" class = "textoutput"></output>
+   ชั่วโมง / วัน</h1></div></form>
+
+  <form oninput="x.value=parseInt(a.value)">
+  <div id = "on2"><input type="range" id="a2" name="a" value="0" min="0" max="60"><br>
+  <h1><output name="x" for="b" class = "textoutput"></output> 
+   ชั่วโมง / เดือน</h1></div></form></span>
+
+
+                        <select id="soflow-color1" class="soflow-color">
+            <option id ="ot1" value="hor">ชั่วโมง/วัน</option>
+            <option id ="ot2" value="mont">ชั่วโมง/เดือน</option>	
+</select> <br><br>
+
+                        <h1><label for="fname">ดูหนัง 1 นาที = </label>
+                            <input class="tb5" type="number" id="fname1" name="fname" value="8192" min="0" max="1500" placeholder="ตัวเลข">
+
+
+                            <label><select id="soflow-color2" class="soflow-color2" >           
+            <option value="kb" id="kb">KB</option>
+            <option value="mb" id="mb">MB</option>	
+            <option value="gb" id="gb">GB</option>	
+ </select></label></h1><br><br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td align="right">
+
+                        <button class="button" id="calculator" style="vertical-align:middle">ข้าม</button>
+                        <button class="button" id="calculator-1" style="vertical-align:middle">ถัดไป</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!---------------------------------------------------- table 2------------------------------------>
+        <!---------------------------------------------------- option 2 ------------------------------------>
+        <div id="table2">
+            <table border="0" width="100%" align="center">
+                <tr>
+                    <td align="center">
+                        <u><h3 id = "text3" class="text3">ดาวน์โหลด แอพ,เพลง,เกมส์</h3></u><br>
+
+                        <img width="250px" height="250px" src="logo\computing.png"></img>
+
+                    </td>
+                    <td align="center" id="textss">
+                        <p id="text4" class="text4">กรุณาใส่ค่าประมาณการใช้งาน</p><br>
+                        <span>
+ <form oninput="y.value=parseInt(a.value)">
+  <div id = "on3"><input type="range" id="a3" name="a" value="0" min="0" max="100"><br>
+  <h1><output name="y" for="b" class = "textoutput"></output>
+   แอพ / วัน</h1></div></form>
+
+ <form oninput="x.value=parseInt(a.value)">
+  <div id = "on4"><input type="range" id="a4" name="a" value="0" min="0" max="100"><br>
+  <h1><output name="x" for="b" class = "textoutput"></output> 
+   แอพ / เดือน</h1></div></form></span>
+
+
+                        <select id="soflow-color2_1" class="soflow-color">
+            <option id ="ot3" value="hor1">แอพ/วัน</option>
+            <option id ="ot4" value="mont1">แอพ/เดือน</option>
+</select> <br><br>
+
+                        <h1> <label for="fname">โหลด 1 ครั้ง = </label>
+                            <input class="tb5" type="number" id="fname2" name="fname" value="5120" min="0" max="1500">
+
+
+                            <label><select id="soflow-color2-1" class="soflow-color2">           
+            <option value="kb1" id="kb1">KB</option>
+            <option value="mb1" id="mb1">MB</option>	
+            <option value="gb1" id="gb1">GB</option>
+ </select></label></h1><br><br><br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td align="right">
+                        <button class="button" id="calculator2" style="vertical-align:middle">ข้าม</button>
+                        <button class="button" id="black1" style="vertical-align:middle">ก่อนหน้า</button>
+                        <button class="button" id="calculator2-1" style="vertical-align:middle">ถัดไป</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <!---------------------------------------------------- table 3 ------------------------------------>
+        <!---------------------------------------------------- option 3 ------------------------------------>
+        <div id="table3">
+            <table border="0" width="100%" align="center">
+                <tr>
+                    <td align="center">
+                        <u><h3 id = "text3" class="text3">โพสต์รูปบนโซเชียล</h3></u><br>
+
+                        <img width="250px" height="250px" src="logo\agenda-1.png"></img>
+
+                    </td>
+                    <td align="center" id="textss">
+                        <p id="text4" class="text4">กรุณาใส่ค่าประมาณการใช้งาน</p><br>
+                        <span>
+ <form oninput="y.value=parseInt(a.value)">
+  <div id = "on5"><input type="range" id="a5" name="a" value="0" min="0" max="100"><br>
+  <h1><output name="y" for="b" class = "textoutput"></output>
+   รูป / วัน</h1></div></form>
+
+ <form oninput="x.value=parseInt(a.value)">
+  <div id = "on6"><input type="range" id="a6" name="a" value="0" min="0" max="100"><br>
+  <h1><output name="x" for="b" class = "textoutput"></output> 
+   รูป / เดือน</h1></div></form></span>
+
+
+                        <select id="soflow-color3" class="soflow-color">
+            <option id ="ot5" value="hor2">รูป/วัน</option>
+            <option id ="ot6" value="mont2">รูป/เดือน</option>
+</select> <br><br>
+
+                        <h1> <label for="fname">1 รูป = </label>
+                            <input class="tb5" type="number" id="fname3" name="fname" value="819" min="0" max="1500">
+
+
+
+                            <label><select id="soflow-color3-1" class="soflow-color">           
+        	<option value="kb2" id="kb2">KB</option>
+            <option value="mb2" id="mb2">MB</option>	
+            <option value="gb2" id="gb2">GB</option>	
+ </select></label></h1><br><br><br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td align="right">
+                        <button class="button" id="calculator3" style="vertical-align:middle">ข้าม</button>
+                        <button class="button" id="black2" style="vertical-align:middle">ก่อนหน้า</button>
+                        <button class="button" id="calculator3-1" style="vertical-align:middle">ถัดไป</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <!---------------------------------------------------- table 4 ------------------------------------>
+        <!---------------------------------------------------- option 4 ------------------------------------>
+        <div id="table4">
+            <table border="0" width="100%" align="center">
+                <tr>
+                    <td align="center">
+                        <u><h3 id = "text3" class="text3">เข้าเว็บไซต์</h3></u><br>
+
+                        <img width="250px" height="250px" src="logo\computer.png"></img>
+
+                    </td>
+                    <td align="center" id="textss">
+                        <p id="text4" class="text4">กรุณาใส่ค่าประมาณการใช้งาน</p><br>
+                        <span>
+ <form oninput="y.value=parseInt(a.value)">
+  <div id = "on7"><input type="range" id="a7" name="a" value="0" min="0" max="100"><br>
+  <h1><output name="y" for="b" class = "textoutput"></output>
+   เพจ / วัน</h1></div></form>
+
+ <form oninput="x.value=parseInt(a.value)">
+ <div id = "on8"><input type="range" id="a8" name="a" value="0" min="0" max="100"><br>
+  <h1><output name="x" for="b" class = "textoutput"></output> 
+   เพจ / เดือน</h1></div></form></span>
+
+
+                        <select id="soflow-color4" class="soflow-color">
+            <option id ="ot7" value="hor3">เพจ/วัน</option>
+            <option id ="ot8" value="mont3">เพจ/เดือน</option>
+</select> <br><br>
+
+                        <h1> <label for="fname">1 เพจ = </label>
+                            <input class="tb5" type="number" id="fname4" name="fname" value="940" min="0" max="1500">
+
+
+
+                            <label><select id="soflow-color4-1" class="soflow-color">           
+          	<option value="kb3" id="kb3">KB</option>
+            <option value="mb3" id="mb3">MB</option>	
+            <option value="gb3" id="gb3">GB</option>	
+ </select></label></h1><br><br><br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td align="right">
+                        <button class="button" id="calculator4" style="vertical-align:middle">ข้าม</button>
+                        <button class="button" id="black4" style="vertical-align:middle">ก่อนหน้า</button>
+                        <button class="button" id="calculator4-1" style="vertical-align:middle">ถัดไป</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <!---------------------------------------------------- table 5 ------------------------------------>
+        <!---------------------------------------------------- option 5 ------------------------------------>
+        <div id="table5">
+            <table border="0" width="100%" align="center">
+                <tr>
+                    <td align="center">
+                        <u><h3 id = "text3" class="text3">เล่นเกมส์ออนไลน์</h3></u><br>
+
+                        <img width="250px" height="250px" src="logo\stats-8.png"></img>
+
+                    </td>
+                    <td align="center" id="textss">
+                        <p id="text4" class="text4">กรุณาใส่ค่าประมาณการใช้งาน</p><br>
+                        <span>
+ <form oninput="y.value=parseInt(a.value)">
+ <div id = "on9"><input type="range" id="a9" name="a" value="0" min="0" max="24"><br>
+  <h1><output name="y" for="b" class = "textoutput"></output>
+   ชั่วโมง / วัน</h1></div></form>
+
+ <form oninput="x.value=parseInt(a.value)">
+ <div id = "on10"><input type="range" id="a10" name="a" value="0" min="0" max="300"><br>
+  <h1><output name="x" for="b" class = "textoutput"></output> 
+   ชั่วโมง / เดือน</h1></div></form></span>
+
+
+                        <select id="soflow-color5" class="soflow-color">
+            <option id ="ot9" value="hor4">ชั่วโมง/วัน</option>
+            <option id ="ot10" value="mont4">ชั่วโมง/เดือน</option>
+</select> <br><br>
+
+                        <h1> <label for="fname">เล่นเกมส์ 1 นาที = </label>
+                            <input class="tb5" type="number" id="fname5" name="fname" value="375" min="0" max="1500">
+
+
+
+                            <label><select id="soflow-color5-1" class="soflow-color">           
+            <option value="kb4" id="kb4">KB</option>
+            <option value="mb4" id="mb4">MB</option>	
+            <option value="gb4" id="gb4">GB</option>
+ </select></label></h1><br><br><br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td align="right">
+                        <button class="button" id="calculator5" style="vertical-align:middle">ข้าม</button>
+                        <button class="button" id="black5" style="vertical-align:middle">ก่อนหน้า</button>
+                        <button class="button" id="calculator5-1" style="vertical-align:middle">ถัดไป</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <!---------------------------------------------------- table 6 ------------------------------------>
+        <!---------------------------------------------------- option 6 ------------------------------------>
+        <div id="table6">
+            <table border="0" width="100%" align="center">
+                <tr>
+                    <td align="center">
+                        <u><h3 id = "text3" class="text3">รับ-ส่ง Email</h3></u><br>
+
+                        <img width="250px" height="250px" src="logo\email.png"></img>
+
+                    </td>
+                    <td align="center" id="textss">
+                        <p id="text4" class="text4">กรุณาใส่ค่าประมาณการใช้งาน</p><br>
+                        <span>
+ <form oninput="y.value=parseInt(a.value)">
+ <div id = "on11"><input type="range" id="a11" name="a" value="0" min="0" max="100"><br>
+  <h1><output name="y" for="b" class = "textoutput"></output>
+   อีเมล์ / วัน</h1></div></form>
+
+ <form oninput="x.value=parseInt(a.value)">
+  <div id = "on12"><input type="range" id="a12" name="a" value="0" min="0" max="100"><br>
+  <h1><output name="x" for="b" class = "textoutput"></output> 
+   อีเมล์ / เดือน</h1></div></form></span>
+
+
+                        <select id="soflow-color6" class="soflow-color">
+            <option id ="ot11" value="hor5">อีเมล์/วัน</option>
+            <option id ="ot12" value="mont5">อีเมล์/เดือน</option>	
+</select> <br><br>
+
+                        <h1> <label for="fname">1 อีเมล์ = </label>
+                            <input class="tb5" type="number" id="fname6" name="fname" value="249" min="0" max="1500">
+
+
+                            <label><select id="soflow-color6-1" class="soflow-color">           
+          	<option value="kb5" id="kb5">KB</option>
+            <option value="mb5" id="mb5">MB</option>	
+            <option value="gb5" id="gb5">GB</option>
+ </select></label></h1><br><br><br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td align="right">
+
+                        <button class="button" id="black6" style="vertical-align:middle">ก่อนหน้า</button>
+                        <button class="button3" id="calculator6" style="vertical-align:middle">คำนวนปริมาณการใช้งาน</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="table7">
+            <table border="0" width="80%" align="center">
+
+                <tr>
+                    <td>
+                        <center>
+                            <p id="textall">คุณใช้อินเทอร์เน๊ต ไปทั้งสิ้น เป็นจำนวน ดังนี้</p>
+                        </center><br><br><br><br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <br>
+                    <td id="all" bgcolor="#999966">
+
+                        <center>
+                            <p>จำนวนการใช้งาน 1 เดือน <br><span id="result"></span> </p>
+                        </center>
+                    </td>
+
+                </tr>
+                <!-------------------------------------------- แผนภูมิกราฟ -------------------------------------------------------->
+                <tr>
+                    <td><br><br><br>
+                        <center>
+                            <button class="button4" onclick="myFunction()">แสดงการใช้งานทั้งหมด</button>
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+
+
+
+
+
+
+    </center>
+
+    <!--  <input type="text" id="resultTotal1" value="0">
+    <input type="text" id="resultTotal2" value="0">
+    <input type="text" id="resultTotal3" value="0">
+    <input type="text" id="resultTotal4" value="0">
+    <input type="text" id="resultTotal5" value="0">
+    <input type="text" id="resultTotal6" value="0">
+-->
+
+</body>
+
+<script src="click.js">
+</script>
+<script src="calculator.js">
+</script>
+
+</html>

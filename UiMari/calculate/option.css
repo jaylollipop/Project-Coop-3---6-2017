@@ -1,0 +1,27 @@
+.soflow-color {
+    color: #fff;
+    background-color: #779126;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 30px;
+    padding-left: 15px;
+    height: 35px;
+    width: 30%;
+    font-family: FreesiaUPC;
+    font-size: 30px;
+    text-align: center;
+}
+
+.soflow-color2 {
+    color: #fff;
+    background-color: #779126;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    padding-left: 15px;
+    height: 35px;
+    width: 13%;
+    font-family: FreesiaUPC;
+    font-size: 28px;
+    text-align: center;
+}

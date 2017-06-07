@@ -1,0 +1,79 @@
+body {
+    background: #FF0000;
+}
+
+.btn {
+    background: #e6eaed;
+    background-image: -webkit-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -moz-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -ms-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -o-linear-gradient(top, #e6eaed, #becad1);
+    background-image: linear-gradient(to bottom, #e6eaed, #becad1);
+    font-family: Arial;
+    color: #f01818;
+    font-size: 32px;
+    padding: 10px 20px 10px 20px;
+    border: solid #6e8ac2 0px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn2 {
+    background: #e6eaed;
+    background-image: -webkit-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -moz-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -ms-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -o-linear-gradient(top, #e6eaed, #becad1);
+    background-image: linear-gradient(to bottom, #e6eaed, #becad1);
+    font-family: Arial;
+    color: #faca08;
+    font-size: 32px;
+    padding: 10px 20px 10px 20px;
+    border: solid #6e8ac2 0px;
+    text-decoration: none;
+}
+
+.btn2:hover {
+    text-decoration: none;
+}
+
+.btn3 {
+    background: #e6eaed;
+    background-image: -webkit-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -moz-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -ms-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -o-linear-gradient(top, #e6eaed, #becad1);
+    background-image: linear-gradient(to bottom, #e6eaed, #becad1);
+    font-family: Arial;
+    color: #fa4a0a;
+    font-size: 32px;
+    padding: 10px 20px 10px 20px;
+    border: solid #6e8ac2 0px;
+    text-decoration: none;
+}
+
+.btn:hover3 {
+    text-decoration: none;
+}
+
+.btn4 {
+    background: #e6eaed;
+    background-image: -webkit-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -moz-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -ms-linear-gradient(top, #e6eaed, #becad1);
+    background-image: -o-linear-gradient(top, #e6eaed, #becad1);
+    background-image: linear-gradient(to bottom, #e6eaed, #becad1);
+    font-family: Arial;
+    color: #80685f;
+    font-size: 32px;
+    padding: 10px 20px 10px 20px;
+    border: solid #6e8ac2 0px;
+    text-decoration: none;
+}
+
+.btn4:hover {
+    text-decoration: none;
+}

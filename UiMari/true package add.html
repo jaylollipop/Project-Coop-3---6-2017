@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Home</title>
+    <script type="text/javascript" src="Jquery/jquery-3.1.1.min.js">
+    </script>
+    <style type="text/css">
+        body {
+            background-color: #ddd;
+            margin: 0px 0px 0px 0px;
+        }
+        
+        #container {
+            width: 98%;
+            margin: auto;
+            position: relative;
+        }
+        
+        .content {
+            background-color: #F5F5F5;
+            margin: 40px 40px 40px 40px;
+            padding: 40px 40px 40px 40px;
+            box-shadow: 2px 2px 2px #ccc;
+            display: block;
+            overflow: auto;
+            text-align: center;
+            position: absolute;
+            width: 1550px;
+            height: 910px;
+        }
+        
+        .divTable {
+            display: table;
+            width: 100%;
+        }
+        
+        .divTableRow {
+            display: table-row;
+        }
+        
+        .divTableCell,
+        .divTableHead {
+            display: table-cell;
+            padding: 3px 10px;
+            text-align: center;
+            vertical-align: top;
+            font-size: 40px;
+            font-family: Tahoma, Geneva, sans-serif;
+        }
+        
+        .divTableBody {
+            display: table-row-group;
+        }
+        
+        .boxMenu {
+            border: 1px dashed #DCDCDC;
+            padding: 150px 100px 150px 100px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+
+    <script>
+        var session;
+
+        function toTabletHandler(value) {
+            console.log("PepperQiMessaging/totabletイベント発生: " + value);
+            var tmpSplit = value.split(':');
+            switch (tmpSplit[0]) {
+                case 'mode':
+                    chkSpeech = tmpSplit[1];
+                    changeSpeech('pepper');
+                    break;
+            }
+        }
+
+        function startSubscribe() {
+            QiSession(function(s) {
+                session = s;
+                session.service("ALMemory").then(function(ALMemory) {
+                    console.log("got ALMemory object");
+                    ALMemory.subscriber("PepperQiMessaging/totablet").then(function(subscriber) {
+                        subscriber.signal.connect(toTabletHandler);
+                    });
+                });
+            });
+        }
+        var chkSpeech = 1;
+
+        function changeSpeech(mode) {
+            if (mode == 'pepper') {
+                switch (parseInt(chkSpeech)) {
+                    case 0:
+                        chkSpeech = 0;
+                        $('#speechiCon').attr('src', 'images/BubblesiConOff.png');
+                        $('#iFrameSPepper').attr('src', 'pepper/Speech0.html');
+                        break;
+                    case 1:
+                        chkSpeech = 1;
+                        $('#speechiCon').attr('src', 'images/BubblesiConOn.png');
+                        $('#iFrameSPepper').attr('src', 'pepper/Speech1.html');
+                        break;
+                    case 2:
+                        chkSpeech = 2;
+                        $('#speechiCon').attr('src', 'images/BubblesiConGoogle.png');
+                        $('#iFrameSPepper').attr('src', 'pepper/Speech2.html');
+                        break;
+                }
+            } else {
+                switch (parseInt(chkSpeech)) {
+                    case 0:
+                        chkSpeech = 1;
+                        $('#speechiCon').attr('src', 'images/BubblesiConOn.png');
+                        $('#iFrameSPepper').attr('src', 'pepper/Speech1.html');
+                        break;
+                    case 1:
+                        chkSpeech = 2;
+                        $('#speechiCon').attr('src', 'images/BubblesiConGoogle.png');
+                        $('#iFrameSPepper').attr('src', 'pepper/Speech2.html');
+                        break;
+                    case 2:
+                        chkSpeech = 0;
+                        $('#speechiCon').attr('src', 'images/BubblesiConOff.png');
+                        $('#iFrameSPepper').attr('src', 'pepper/Speech0.html');
+                        break;
+                }
+            }
+        }
+
+        function sendValue(filename) {
+            $('#iFrameSPepper').attr('src', 'pepper/' + filename + '.html');
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body onLoad="startSubscribe();" class="demo">
+
+    <iframe id="iFrameSPepper" src="" height="0" width="0"></iframe>
+    <div id="demo-content">
+        <div>
+
+            <div class="content">
+                <div class="divTable">
+                    <div class="divTableBody">
+                        <div class="divTableRow">
+                            <div class="divTableCell" style="width:100%; text-align:left;">
+                                <div style="width:100%; text-align:right;">
+                                    <a href="javascript:void(0);" onclick="changeSpeech('button');">
+                                        <img id="speechiCon" src="images/BubblesiConOn.png" width="90" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell" style="width:100%;">
+
+
+
+
+
+                                <!------ <a href="home.html"> <img src="ss2.png" width="50" height="120" ALIGN=LEFT></a> ---->
+                                <script>
+                                    $(function() {
+                                        $('#aa').hide();
+                                        $('#promo2').hide();
+
+                                        $('#aa1').hide();
+                                        $('#promo2_1').hide();
+
+                                        $('#aa2').hide();
+                                        $('#promo2_2').hide();
+
+                                        /***-----------------ตารางที่ 1 -----------------*/
+                                        $('#promo').click(function() {
+                                            $('#aa').show();
+                                            $('#promo').hide();
+                                            $('#promo2').show();
+                                            return false;
+                                        });
+
+                                        $('#promo2').click(function() {
+                                            $('#aa').hide();
+                                            $('#promo').show();
+                                            $('#promo2').hide();
+                                            return false;
+                                        });
+
+
+                                        /***-----------------ตารางที่ 2 -----------------*/
+                                        $('#promo_1').click(function() {
+                                            $('#aa1').show();
+                                            $('#promo_1').hide();
+                                            $('#promo2_1').show();
+                                            return false;
+                                        });
+
+                                        $('#promo2_1').click(function() {
+                                            $('#aa1').hide();
+                                            $('#promo_1').show();
+                                            $('#promo2_1').hide();
+                                            return false;
+                                        });
+
+
+                                        /***-----------------ตารางที่ 3 -----------------*/
+                                        $('#promo_2').click(function() {
+                                            $('#aa2').show();
+                                            $('#promo_2').hide();
+                                            $('#promo2_2').show();
+                                            return false;
+                                        });
+
+                                        $('#promo2_2').click(function() {
+                                            $('#aa2').hide();
+                                            $('#promo_2').show();
+                                            $('#promo2_2').hide();
+                                            return false;
+                                        });
+
+                                    });
+                                </script>
+                                <center>
+                                    <div id="container">
+
+
+
+                                        <div class="pricing-table basic">
+                                            <span class="table-head">
+				<span id="all"></span>
+                                            </span>
+                                            <span class="price">
+				<span id="all1"></span>
+                                            </span>
+                                            <span class="table-row"> <span id="all2"></span> <br>
+                                            <img src="htv.png" width="26" height="26">
+                                            <img src="youtube.png" width="26" height="26">
+
+                                            </span>
+
+                                            <div id="aa">
+                                                <span class="table-row"><span id="all3"></span></span>
+                                                <span class="table-row"><span id="all4"></span><br>
+                                                <span id="all5"></span>
+                                                </span>
+                                                <span class="table-row"><span id="all33"></span></span>
+                                                <span class="table-row"><span id="all6"></span><br>
+                                                <span id="all7"></span>
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="purchase">
+                                                <a id="promo" href="" class="buy">รายละเอียด</a>
+                                                <a id="promo2" href="" class="buy">รายละเอียด</a>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="pricing-table basic">
+                                            <span class="table-head">
+				<span id="all8"></span>
+                                            </span>
+                                            <span class="price">
+				<span id="all9"></span>
+                                            </span>
+                                            <span class="table-row"> <span id="all10"></span> <br><br>
+                                            <img src="htv.png" width="30" height="30">
+                                            <img src="speednet.png" width="30" height="30">
+
+
+                                            </span>
+
+                                            <div id="aa1">
+                                                <span class="table-row"><span id="all11"></span></span>
+                                                <span class="table-row"><span id="all12"></span><br>
+                                                <br>
+                                                <span id="all13"></span>
+                                                </span>
+                                                <span class="table-row"><span id="all1111"></span></span>
+                                                <span class="table-row"><span id="all14"></span><br>
+                                                <br>
+                                                <span id="all15"></span>
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="purchase">
+                                                <a id="promo_1" href="" class="buy">รายละเอียด</a>
+                                                <a id="promo2_1" href="" class="buy">รายละเอียด</a>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="pricing-table premium">
+                                            <span class="table-head">
+				<span id="all16"></span>
+                                            </span>
+                                            <span class="price">
+				<span id="all17"></span>
+                                            </span>
+                                            <span class="table-row"><span id="all18"></span> <br><br>
+                                            <img src="htv.png" width="30" height="30">
+                                            <img src="true4g.png" width="70" height="30">
+
+
+                                            </span>
+
+                                            <div id="aa2">
+                                                <span class="table-row"><span id="all19"></span></span>
+                                                <span class="table-row"><span id="all20"></span><br> <br>
+                                                <span id="all21"></span>
+                                                </span>
+                                                <span class="table-row"><span id="all1919"></span></span>
+                                                <span class="table-row"><span id="all22"></span><br>
+                                                <br>
+                                                <span id="all23"></span>
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="purchase">
+                                                <a id="promo_2" href="" class="buy">รายละเอียด</a>
+                                                <a id="promo2_2" href="" class="buy">รายละเอียด</a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </center>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
+        </script>
+
+</body>
+<script src="promotion\supplement.js"></script>
+
+</html>

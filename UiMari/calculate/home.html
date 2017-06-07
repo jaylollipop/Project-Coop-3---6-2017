@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Result</title>
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+<script src="/libs/qimessaging/2/qimessaging.js"></script>
+<script>
+  var session;
+
+  function toTabletHandler(value) {
+	console.log("PepperQiMessaging/totabletイベント発生: " + value);
+    document.getElementById("divShowResult").innerHTML = value;
+  }
+  function startSubscribe() {
+	  QiSession( function (s) {
+	  session = s;
+	  session.service("ALMemory").then(function (ALMemory) {
+		console.log("got ALMemory object");
+		ALMemory.subscriber("PepperQiMessaging/totablet").then(function(subscriber) {
+		  subscriber.signal.connect(toTabletHandler);
+		});
+	  });
+	});
+  }
+</script>
+
+</head>
+
+<body onLoad="startSubscribe();">
+    <center>
+        <br /><br />
+        <div id="divShowResult" class="divShowResult">....</div>
+    </center>
+</body>
+</html>
